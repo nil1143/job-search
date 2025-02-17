@@ -22,7 +22,7 @@ model User {
   JobSeeker    JobSeeker?
   onboardingCompleted Boolean @default(false)
   userType UserType?
-  stripeCustomerId String? 
+  stripeCustomerId String? @unique
 }
 
 enum UserType {

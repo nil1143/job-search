@@ -153,6 +153,9 @@ export async function createJob(data: z.infer<typeof jobSchema>) {
       listingDuration: validatedData.listingDuration,
       benefits: validatedData.benefits,
     },
+    select: {
+      id: true,
+    },
   });
 
   // Get price from pricing tiers based on duration
@@ -163,7 +166,7 @@ export async function createJob(data: z.infer<typeof jobSchema>) {
   if (!pricingTier) {
     throw new Error("Invalid listing duration selected");
   }
-  
+
   const session = await stripe.checkout.sessions.create({
     customer: stripeCustomerId,
     line_items: [
