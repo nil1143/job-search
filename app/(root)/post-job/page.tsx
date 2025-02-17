@@ -1,6 +1,11 @@
 import React from "react";
 import ArcJetLogo from "@/public/arcjet.png";
 import InngestLogo from "@/public/inngest-locale.png";
+import NextjsLogo from "@/public/nextjs.png";
+import PrismaLogo from "@/public/prisma.png";
+import ShadcnLogo from "@/public/shadcn.png";
+import StripeLogo from "@/public/stripe.png";
+
 import {
   Card,
   CardContent,
@@ -10,14 +15,16 @@ import {
 } from "@/components/ui/card";
 import Image from "next/image";
 import { CreateJobForm } from "@/components/forms/CreateJobForm";
+import { redirect } from "next/navigation";
+import { prisma } from "@/app/utils/db";
 
 const companies = [
   { id: 0, name: "ArcJet", logo: ArcJetLogo },
   { id: 1, name: "Inngest", logo: InngestLogo },
-  { id: 2, name: "ArcJet", logo: ArcJetLogo },
-  { id: 3, name: "Inngest", logo: InngestLogo },
-  { id: 4, name: "ArcJet", logo: ArcJetLogo },
-  { id: 5, name: "Inngest", logo: InngestLogo },
+  { id: 2, name: "Stripe", logo: StripeLogo },
+  { id: 3, name: "Next.js", logo: NextjsLogo },
+  { id: 4, name: "Shadcn", logo: ShadcnLogo },
+  { id: 5, name: "Prisma", logo: PrismaLogo },
 ];
 
 const testimonials = [
@@ -48,6 +55,27 @@ const stats = [
   { value: "500+", label: "Companies hiring monthly" },
 ];
 
+async function getCompany(userId: string) {
+  const data = await prisma.company.findUnique({
+    where: {
+      userId: userId,
+    },
+    select: {
+      name: true,
+      location: true,
+      about: true,
+      logo: true,
+      xAccount: true,
+      website: true,
+    },
+  });
+
+  if (!data) {
+    return redirect("/");
+  }
+  return data;
+}
+
 const PostJobPage = () => (
   <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-5">
     {/* <CreateJobForm
@@ -58,7 +86,7 @@ const PostJobPage = () => (
         companyXAccount={data.xAccount}
         companyWebsite={data.website}
       /> */}
-    <CreateJobForm 
+    <CreateJobForm
       companyAbout=""
       companyLocation=""
       companyLogo=""

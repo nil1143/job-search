@@ -34,9 +34,8 @@ import { jobSchema } from "@/app/utils/zodSchemas";
 import { SalaryRangeSelector } from "../general/SalaryRangeSelector";
 import JobDescriptionEditor from "../richTextEditor/JobDescriptionEditor";
 import BenefitsSelector from "../general/BenefitsSelector";
-// import JobDescriptionEditor from "../richTextEditor/JobDescriptionEditor";
-// import BenefitsSelector from "../general/BenefitsSelector";
-// import { JobListingDurationSelector } from "../general/JobListingDurationSelector";
+import { JobListingDurationSelector } from "../general/JobListingDurationSelector";
+import { createJob } from "@/app/actions";
 // import { createJob } from "@/app/actions";
 
 interface CreateJobFormProps {
@@ -81,7 +80,7 @@ export function CreateJobForm({
     try {
       setPending(true);
 
-      //   await createJob(values);
+        await createJob(values);
     } catch {
       toast.error("Something went wrong. Please try again.");
     } finally {
@@ -421,7 +420,7 @@ export function CreateJobForm({
               render={({ field }) => (
                 <FormItem>
                   <FormControl>
-                    {/* <JobListingDurationSelector field={field} /> */}
+                    <JobListingDurationSelector field={field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
