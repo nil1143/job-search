@@ -46,6 +46,8 @@ export async function POST(req: Request) {
 
     if (!company) throw new Error("User not found...");
 
+
+    //  TO FIX ---------------------
     await prisma.jobPost.update({
       where: {
         id: jobId,
