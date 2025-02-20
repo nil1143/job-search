@@ -23,6 +23,8 @@ model User {
   onboardingCompleted Boolean @default(false)
   userType UserType?
   stripeCustomerId String? @unique
+  
+  SavedJobPost SavedJobPost[]
 }
 
 enum UserType {
@@ -80,6 +82,8 @@ model JobPost {
 
   createdAt    DateTime       @default(now())
   updatedAt    DateTime       @updatedAt
+
+  SavedJobPost SavedJobPost[]
 }
 
 enum JobPostStatus {
@@ -128,3 +132,17 @@ model VerificationToken {
   @@id([identifier, token])
 }
  
+
+ model SavedJobPost {
+  id     String @id @default(uuid())
+  JobPost JobPost? @relation(fields: [jobPostId], references: [id])
+  jobPostId String?
+
+  User User @relation(fields: [userId], references: [id])
+  userId String
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([userId, jobPostId])
+ }

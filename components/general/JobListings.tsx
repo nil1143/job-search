@@ -5,7 +5,7 @@ import { JobCard } from "./JobCard";
 async function getData() {
   const data = await prisma.jobPost.findMany({
     where: {
-      status: "DRAFT",
+      status: "ACTIVE",
     },
     select: {
       jobTitle: true,
