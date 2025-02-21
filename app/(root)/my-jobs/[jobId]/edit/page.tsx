@@ -1,5 +1,6 @@
 import { prisma } from "@/app/utils/db";
 import requireUser from "@/app/utils/requireUser";
+import { EditJobForm } from "@/components/forms/EditJobForm";
 // import { EditJobForm } from "@/components/forms/EditJobForm";
 
 import { notFound } from "next/navigation";
@@ -60,7 +61,7 @@ const EditJobPage = async ({ params }: { params: Params }) => {
     return notFound();
   }
 
-  return <>{/* <EditJobForm jobPost={jobPost} /> */}</>;
+  return <>{<EditJobForm jobPost={jobPost} /> }</>;
 };
 
 export default EditJobPage;

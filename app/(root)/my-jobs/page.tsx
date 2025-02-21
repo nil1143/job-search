@@ -37,7 +37,7 @@ import Link from "next/link";
 import { EmptyState } from "@/components/general/EmptyState";
 import { prisma } from "@/app/utils/db";
 import requireUser from "@/app/utils/requireUser";
-// import { CopyLinkMenuItem } from "@/components/general/CopyLink";
+import {CopyLinkMenuItem} from "@/components/general/CopyLink";
 
 async function getJobs(userId: string) {
   const data = await prisma.jobPost.findMany({
@@ -149,15 +149,15 @@ const MyJobs = async () => {
                               Edit Job
                             </Link>
                           </DropdownMenuItem>
-                          {/* <CopyLinkMenuItem
+                          <CopyLinkMenuItem
                             jobUrl={`${process.env.NEXT_PUBLIC_URL}/job/${listing.id}`}
-                          /> */}
-                          <DropdownMenuItem asChild>
+                          />
+                          {/* <DropdownMenuItem asChild>
                             <Link href={`/my-jobs/${listing.id}/edit`}>
                               <CopyCheckIcon className="size-4" />
                               Copy URL
                             </Link>
-                          </DropdownMenuItem>
+                          </DropdownMenuItem> */}
                           <DropdownMenuSeparator />
                           <DropdownMenuItem asChild>
                             <Link href={`/my-jobs/${listing.id}/delete`}>
