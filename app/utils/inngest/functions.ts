@@ -37,7 +37,7 @@ export const sendPeriodicJobListings = inngest.createFunction(
   { id: "send-job-listings" },
   { event: "jobseeker/created" },
   async ({ event, step }) => {
-    const { userId, email } = event.data;
+    const { userId } = event.data;
 
     const totalDays = 30;
     const intervalDays = 2;
@@ -68,7 +68,7 @@ export const sendPeriodicJobListings = inngest.createFunction(
 
       if (recentJobs.length > 0) {
         await step.run("send-email", async () => {
-          const jobListingsHtml = recentJobs
+          recentJobs
             .map(
               (job) => `
           <div style="margin-bottom: 20px; padding: 15px; border: 1px solid #eee; border-radius: 5px">

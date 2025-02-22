@@ -2,10 +2,11 @@
 
 import { benefits } from "@/app/utils/listOfBenefits";
 import { Badge } from "@/components/ui/badge";
+import { ControllerRenderProps } from "react-hook-form";
 
 interface BenefitsSelectorProps {
-  field: any;
-  // field: ControllerRenderProps
+  // field: any
+  field: ControllerRenderProps
 }
 
 export default function BenefitsSelector({ field }: BenefitsSelectorProps) {

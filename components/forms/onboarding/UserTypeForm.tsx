@@ -13,9 +13,9 @@ export default function UserTypeSelection({
   return (
     <div className="space-y-8">
       <div className="text-center space-y-2">
-        <h2 className="text-2xl font-bold ">Welcome! Let's get started</h2>
+        <h2 className="text-2xl font-bold ">Welcome! Let&apos;s get started</h2>
         <p className="text-muted-foreground">
-          Choose how you'd like to use our platform
+          Choose how you&apos;d like to use our platform
         </p>
       </div>
 

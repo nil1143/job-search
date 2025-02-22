@@ -9,7 +9,7 @@ import GeneralSubmitButton, {
   SaveJobButton,
 } from "@/components/general/SubmitButtons";
 import { Badge } from "@/components/ui/badge";
-import { Button, buttonVariants } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import { detectBot, request } from "@arcjet/next";

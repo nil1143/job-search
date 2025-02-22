@@ -36,7 +36,6 @@ import JobDescriptionEditor from "../richTextEditor/JobDescriptionEditor";
 import BenefitsSelector from "../general/BenefitsSelector";
 import { JobListingDurationSelector } from "../general/JobListingDurationSelector";
 import { createJob } from "@/app/actions";
-// import { createJob } from "@/app/actions";
 
 interface CreateJobFormProps {
   companyName: string;
@@ -80,7 +79,7 @@ export function CreateJobForm({
     try {
       setPending(true);
 
-        await createJob(values);
+      await createJob(values);
     } catch {
       toast.error("Something went wrong. Please try again.");
     } finally {
@@ -210,7 +209,7 @@ export function CreateJobForm({
                 <FormItem>
                   <FormLabel>Job Description</FormLabel>
                   <FormControl>
-                    <JobDescriptionEditor field={field as any} />
+                    <JobDescriptionEditor field={field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>

@@ -1,6 +1,6 @@
 "use client";
 
-import { X, XIcon } from "lucide-react";
+import { X } from "lucide-react";
 import { Button } from "../ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 import { Label } from "../ui/label";
@@ -18,7 +18,6 @@ import {
 import { countryList } from "@/app/utils/countriesList";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useCallback } from "react";
-import { Input } from "../ui/input";
 
 export function JobFilters() {
   // const jobTypes = ["full-time", "part-time", "contract", "internship"];

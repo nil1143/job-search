@@ -25,19 +25,13 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
-import {
-  CopyCheckIcon,
-  MoreHorizontal,
-  PenBoxIcon,
-  User2,
-  XCircle,
-} from "lucide-react";
+import { MoreHorizontal, PenBoxIcon, User2, XCircle } from "lucide-react";
 import Link from "next/link";
 
 import { EmptyState } from "@/components/general/EmptyState";
 import { prisma } from "@/app/utils/db";
 import requireUser from "@/app/utils/requireUser";
-import {CopyLinkMenuItem} from "@/components/general/CopyLink";
+import { CopyLinkMenuItem } from "@/components/general/CopyLink";
 
 async function getJobs(userId: string) {
   const data = await prisma.jobPost.findMany({

@@ -3,10 +3,8 @@
 
 import { useEditor, EditorContent } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
-// import Link from "@tiptap/extension-link";
 import TextAlign from "@tiptap/extension-text-align";
 import Typography from "@tiptap/extension-typography";
-import { useEffect } from "react";
 import { MenuBar } from "./MenuBar";
 
 interface JobDescriptionEditorProps {
