@@ -5,9 +5,7 @@ import { getFlagEmoji } from "@/app/utils/countriesList";
 import { prisma } from "@/app/utils/db";
 import { benefits } from "@/app/utils/listOfBenefits";
 import { JsonToHtml } from "@/components/general/JsonToHtml";
-import GeneralSubmitButton, {
-  SaveJobButton,
-} from "@/components/general/SubmitButtons";
+import { SaveJobButton } from "@/components/general/SubmitButtons";
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -123,18 +121,11 @@ export default async function JobIdPage({ params }: { params: Params }) {
           {/* Header */}
           <div className="flex items-center justify-between">
             <div>
-              <h1 className="text-3xl font-bold">a</h1>
+              <h1 className="text-3xl font-bold">{data.jobTitle}</h1>
               <div className="flex items-center gap-2 mt-2">
-                <p className="font-medium">{data.jobTitle}</p>
-                <span className="hidden md:inline text-muted-foreground">
-                  *
-                </span>
-                <Badge className="rounded-full" variant="secondary">
+                <Badge className="rounded-full p-2" variant="secondary">
                   {data.employmentType}
                 </Badge>
-                <span className="hidden md:inline text-muted-foreground">
-                  *
-                </span>
 
                 <Badge className="rounded-full">
                   {locationFlag && <span className="m-1">{locationFlag}</span>}
@@ -198,7 +189,7 @@ export default async function JobIdPage({ params }: { params: Params }) {
         </div>
 
         {/* Sidebar */}
-        <div className="space-y-6">
+        <div className="space-y-6 ">
           {/* Apply Now Card */}
           <Card className="p-6">
             <div className="space-y-4">
@@ -211,10 +202,13 @@ export default async function JobIdPage({ params }: { params: Params }) {
                   JobMarshal. This helps us grow!
                 </p>
               </div>
-              <form>
-                <input type="hidden" name="jobId" value={jobId} />
-                <GeneralSubmitButton text="Apply now" />
-              </form>
+              <Link
+                href="https://linkedin.com"
+                target="_blank"
+                className={buttonVariants({ size: "default" })}
+              >
+                Apply now
+              </Link>
             </div>
           </Card>
 
@@ -269,7 +263,7 @@ export default async function JobIdPage({ params }: { params: Params }) {
 
           {/* Company Card */}
           <Card className="p-6">
-            <div className="space-y-4">
+            <div className="space-y-4  flex">
               <div className="flex items-center gap-3">
                 <Image
                   src={

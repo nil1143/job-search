@@ -97,11 +97,11 @@ export function EditJobForm({ jobPost }: iAppProps) {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="col-span-1   lg:col-span-2  flex flex-col gap-8"
+        className="col-span-1   lg:col-span-2  flex flex-col gap-8 mb-5"
       >
         <Card>
           <CardHeader>
-            <CardTitle>Job Information</CardTitle>
+            <CardTitle className="text-lg">Edit Job Information</CardTitle>
           </CardHeader>
           <CardContent className="space-y-6">
             <div className="grid md:grid-cols-2 gap-6">

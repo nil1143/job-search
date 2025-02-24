@@ -44,7 +44,9 @@ export function JobCard({ job }: iAppProps) {
               </div>
             )}
             <div className="flex flex-col flex-grow">
-              <h1 className="text-xl md:text-2xl font-bold">{job.jobTitle}</h1>
+              <h1 className="text-xl md:text-2xl font-bold mb-2">
+                {job.jobTitle}
+              </h1>
               <div className="flex flex-wrap items-center gap-2">
                 <p className="text-sm text-muted-foreground">
                   {job.company.name}
@@ -80,11 +82,6 @@ export function JobCard({ job }: iAppProps) {
                 {formatRelativeTime(job.createdAt)}
               </p>
             </div>
-          </div>
-          <div className="!mt-5">
-            <p className="text-base text-muted-foreground line-clamp-2">
-              {job.company.about}
-            </p>
           </div>
         </CardHeader>
       </Card>

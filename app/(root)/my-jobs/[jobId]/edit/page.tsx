@@ -61,7 +61,7 @@ const EditJobPage = async ({ params }: { params: Params }) => {
     return notFound();
   }
 
-  return <>{<EditJobForm jobPost={jobPost} /> }</>;
+  return <>{<EditJobForm jobPost={jobPost} />}</>;
 };
 
 export default EditJobPage;

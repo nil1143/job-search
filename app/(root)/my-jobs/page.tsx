@@ -86,11 +86,11 @@ const MyJobs = async () => {
               <TableHeader>
                 <TableRow>
                   <TableHead>Logo</TableHead>
-                  <TableHead>Company</TableHead>
+                  <TableHead className="max-sm:hidden">Company</TableHead>
                   <TableHead>Job Title</TableHead>
                   <TableHead>Status</TableHead>
-                  <TableHead>Applicants</TableHead>
-                  <TableHead>Created On</TableHead>
+                  <TableHead className="max-sm:hidden">Applicants</TableHead>
+                  <TableHead className="max-sm:hidden">Created On</TableHead>
                   <TableHead className="text-right">Actions</TableHead>
                 </TableRow>
               </TableHeader>
@@ -112,7 +112,7 @@ const MyJobs = async () => {
                         </div>
                       )}
                     </TableCell>
-                    <TableCell className="font-medium">
+                    <TableCell className="font-medium max-sm:hidden">
                       {listing.company.name}
                     </TableCell>
                     <TableCell>{listing.jobTitle}</TableCell>
@@ -120,8 +120,8 @@ const MyJobs = async () => {
                       {listing.status.charAt(0).toUpperCase() +
                         listing.status.slice(1).toLowerCase()}
                     </TableCell>
-                    <TableCell>5</TableCell>
-                    <TableCell>
+                    <TableCell className="max-sm:hidden">5</TableCell>
+                    <TableCell className="max-sm:hidden">
                       {listing.createdAt.toLocaleDateString("en-US", {
                         month: "long",
                         day: "numeric",
@@ -146,12 +146,6 @@ const MyJobs = async () => {
                           <CopyLinkMenuItem
                             jobUrl={`${process.env.NEXT_PUBLIC_URL}/job/${listing.id}`}
                           />
-                          {/* <DropdownMenuItem asChild>
-                            <Link href={`/my-jobs/${listing.id}/edit`}>
-                              <CopyCheckIcon className="size-4" />
-                              Copy URL
-                            </Link>
-                          </DropdownMenuItem> */}
                           <DropdownMenuSeparator />
                           <DropdownMenuItem asChild>
                             <Link href={`/my-jobs/${listing.id}/delete`}>

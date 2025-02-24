@@ -143,7 +143,6 @@ export async function createJob(data: z.infer<typeof jobSchema>) {
   }
 
   const jobPost = await prisma.jobPost.create({
-    // await prisma.jobPost.create({
     data: {
       jobDescription: validatedData.jobDescription,
       jobTitle: validatedData.jobTitle,

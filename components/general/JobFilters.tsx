@@ -20,8 +20,6 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { useCallback } from "react";
 
 export function JobFilters() {
-  // const jobTypes = ["full-time", "part-time", "contract", "internship"];
-
   const router = useRouter();
   const searchParams = useSearchParams();
 
