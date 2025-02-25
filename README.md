@@ -17,19 +17,11 @@ A powerful platform connecting job seekers and employers with ease. Built with N
 - [Screenshots](#screenshots)
 - [Get Started](#get-started)
 
-<!-- 
-- [Installation](#installation)
-- [Configuration](#configuration)
-- [Contributing](#contributing)
-- [License](#license) -->
-
-
-
 
 ## Features
 
 
-### **📝 Onboarding** in three stages: 
+### **📝 Onboarding** in three stages
 Login ->  Choose you role -> Setup your profile!
 
 <img src="public/job-search-screenshoots/onboarding.png">
@@ -61,7 +53,7 @@ Login ->  Choose you role -> Setup your profile!
 
 
 ### Best UI practices
-- **Skeleton**: Pretty placeholders for loading content!
+- **💀 Skeleton**: Pretty placeholders for loading content!
 <br>
 
 
@@ -148,7 +140,7 @@ Our platform is powered by cutting-edge technology:
 #### User Toggle
 ![index_button](/public/job-search-screenshoots/user-toggle.png)
 
-### Pagination
+#### Pagination
 ![index_button](/public/job-search-screenshoots/pagination.png)
 
 #### Themes
