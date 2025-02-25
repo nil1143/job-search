@@ -54,6 +54,9 @@ export async function Navbar() {
       {/* Mobile Navigation */}
       <div className="md:hidden flex items-center gap-4">
         <ThemeToggle />
+        <Link href="/post-job" className={buttonVariants({ size: "sm" })}>
+          Post Job
+        </Link>
         {session?.user ? (
           <UserDropdown
             email={session.user.email as string}

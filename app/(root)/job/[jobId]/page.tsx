@@ -116,7 +116,7 @@ export default async function JobIdPage({ params }: { params: Params }) {
 
   return (
     <div className="container mx-auto py-8">
-      <div className="grid lg:grid-cols-3 gap-8">
+      <div className="grid lg:grid-cols-3 gap-8 max-md:flex max-md:flex-col max-md:items-center">
         <div className="space-y-8 col-span-2">
           {/* Header */}
           <div className="flex items-center justify-between">
